@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo "Battery: $(expr $(expr $(cat /sys/class/power_supply/BAT*/charge_now) \* 100) / $(cat /sys/class/power_supply/BAT*/charge_full))% $(cat /sys/class/power_supply/BAT*/status)"

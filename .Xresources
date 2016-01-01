@@ -1,0 +1,11 @@
+urxvt*foreground: white
+urxvt*background: black
+
+*.color4: #2165ad
+*.color12: #408cda
+
+URxvt*.scrollBar: false
+URxvt*.transparent: true
+URxvt*.shading: 30
+
+URxvt*.font: xft:DejavuSansMono:size=8
