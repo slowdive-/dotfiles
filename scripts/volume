@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo "Volume: $(expr $(amixer get Master | grep % | cut -d'[' -f 2 | cut -d']' -f 1))"
