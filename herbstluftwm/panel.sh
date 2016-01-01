@@ -118,7 +118,8 @@ hc pad $monitor $panel_height
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
         battery="$(zsh ~/.scripts/battery)"
-        right="$separator^fg() $battery $separator^bg() $date $separator"
+        volume="$(zsh ~/.scripts/volume)"
+        right="$separator^fg() $volume $separator^fg() $battery $separator^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
