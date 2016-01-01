@@ -1,2 +1,7 @@
 #!/bin/zsh
-echo "Volume: $(expr $(amixer get Master | grep % | cut -d'[' -f 2 | cut -d']' -f 1))"
+if [ $(amixer get Master | grep -c off) != 1 ]
+then
+    echo "Volume: $(expr $(amixer get Master | grep % | cut -d'[' -f 2 | cut -d']' -f 1))"
+else
+    echo "Volume: off "
+fi
