@@ -1,3 +1,5 @@
+URxvt.perl-ext-common: selection-to-clipboard
+
 urxvt*foreground: white
 urxvt*background: black
 
