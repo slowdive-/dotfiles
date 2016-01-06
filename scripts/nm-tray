@@ -1,0 +1,9 @@
+#!/bin/zsh
+killall nm-applet
+killall trayer
+nm-applet &
+#warten, tray sonst hinter panel
+sleep 1
+trayer --edge top --align right --widthtype request --heighttype pixel \
+--height 16 --expand true --tint 0x000000 --transparent true \
+--alpha 0 &
