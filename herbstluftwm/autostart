@@ -19,7 +19,8 @@ feh --bg-scale ~/bg.jpg
 #light locker aktivieren
 light-locker &
 #compton im Hintergrund starten
-compton --config .config/compton.conf -b
+compton --config .config/compton.conf -b --backend glx --vsync opengl
+#compton --config .config/compton.conf -b --backend glx --vsync opengl-swc
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -33,6 +34,7 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Shift-x close
+hc keybind Ctrl-Alt-x close
 hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-d spawn dmenu_run -fn 'Dejuva-sans:pixelsize=11'
 
@@ -114,8 +116,8 @@ hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
 # media keys
-hc keybind XF86MonBrightnessUp spawn xbacklight -inc 10
-hc keybind XF86MonBrightnessDown spawn xbacklight -dec 10
+hc keybind XF86MonBrightnessUp spawn xbacklight -inc 5
+hc keybind XF86MonBrightnessDown spawn xbacklight -dec 5
 hc keybind XF86AudioLowerVolume spawn amixer -q set Master 5%- unmute
 hc keybind XF86AudioRaiseVolume spawn amixer -q set Master 5%+ unmute
 hc keybind XF86AudioMute spawn amixer -q set Master toggle
@@ -134,7 +136,7 @@ hc set frame_bg_transparent 1
 hc set frame_transparent_width 3
 #hc set frame_gap 4
 #größere Lücken
-herbstclient set frame_gap 20
+herbstclient set frame_gap 12
 
 hc attr theme.active.color '#1e5997'
 hc attr theme.normal.color '#454545'
