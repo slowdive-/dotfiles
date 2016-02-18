@@ -19,8 +19,7 @@ feh --bg-scale ~/bg.jpg
 #light locker aktivieren
 light-locker &
 #compton im Hintergrund starten
-compton --config .config/compton.conf -b --backend glx --vsync opengl
-#compton --config .config/compton.conf -b --backend glx --vsync opengl-swc
+compton --config .config/compton.conf -b
 # remove all existing keybindings
 hc keyunbind --all
 
