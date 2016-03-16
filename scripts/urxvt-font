@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#./urxvt-font [font-increase]
+#./urxvt-font 10
+#./urxvt-font -10
+#
+#Öffnet ein neues urxvt-Fenster mit einer
+#um [font_increase] größeren Schriftart
+#(im Vgl. zur Schriftgröße in ~/.Xresources)
+#
+XRESOURCES=~/.Xresources
+font_increase=$1
+
+old_font_setting=`grep ".font" $XRESOURCES | awk -F '.font:' '{ print $2 }'`
+old_font_size=`echo $old_font_setting | awk -F = '{ print $2 }'`
+old_font=`echo $old_font_setting | awk -F = '{ print $1 }'`
+
+new_font_size=$(($old_font_size+$font_increase))
+
+urxvt -cd `pwd` -fn "$old_font=$new_font_size" &
+exit
