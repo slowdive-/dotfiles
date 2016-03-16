@@ -30,10 +30,22 @@ bindkey '[6~' history-beginning-search-forward
 
 #libreoffice gtk3
 #export SAL_USE_VCLPLUGIN=gtk3
+#defautlt java-versionen über archlinux-java status einsehbar
+export JAVA_HOME=/usr/lib/jvm/default
 
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 alias la='ls -a --color=auto'
 alias syu='sudo pacman -Syu'
 alias ..='cd ..'
-alias wifi='nmtui'
+alias lock='dm-tool lock'
+alias lk='dm-tool lock'
+
+function font_inc() {
+    if [ "$1" != "" ]
+    then
+        bash ~/.scripts/urxvt-font $1 && exit
+    else
+        bash ~/.scripts/urxvt-font 6 && exit
+    fi
+}
