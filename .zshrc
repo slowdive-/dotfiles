@@ -40,6 +40,9 @@ alias syu='sudo pacman -Syu'
 alias ..='cd ..'
 alias lock='dm-tool lock'
 alias lk='dm-tool lock'
+alias intellij='cd ~/Downloads/idea-IU-143.2287.1/bin && ./idea.sh & disown'
+alias magic-draw='zsh ~/Dokumente/whz/pti900/magic-draw/bin/mduml & disown'
+
 
 function font_inc() {
     if [ "$1" != "" ]

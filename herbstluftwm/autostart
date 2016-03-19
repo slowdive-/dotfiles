@@ -20,6 +20,9 @@ feh --bg-scale ~/bg.jpg
 light-locker &
 #compton im Hintergrund starten
 compton --config .config/compton.conf -b
+#Horizontales Scrollen aktivieren
+synclient HorizTwoFingerScroll=1
+
 # remove all existing keybindings
 hc keyunbind --all
 
