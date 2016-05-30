@@ -1,5 +1,8 @@
 URxvt.perl-ext-common: selection-to-clipboard
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 urxvt*foreground: white
 urxvt*background: black
 
@@ -7,7 +10,26 @@ urxvt*background: black
 *.color12: #408cda
 
 URxvt*.scrollBar: false
-URxvt*.transparent: true
-URxvt*.shading: 30
+! URxvt*.transparent: true
+! URxvt*.shading: 30
 
 URxvt*.font: xft:DejavuSansMono:size=8
+
+#define FONTSIZE0 8
+#define FONTSIZE1 10
+#define FONTSIZE2 12
+#define FONTSIZE3 14
+#define FONTSIZE4 16
+#define FONTSIZE5 18
+#define FONTSIZE6 20
+#define FONTSIZE7 24
+!
+!URxvt.keysym.C-plus: command:\033]710;xft:DejavuSansMono:size=18\007
+URxvt.keysym.C-M-0: command:\033]710;xft:DejavuSansMono:size=FONTSIZE0\007
+URxvt.keysym.C-M-1: command:\033]710;xft:DejavuSansMono:size=FONTSIZE1\007
+URxvt.keysym.C-M-2: command:\033]710;xft:DejavuSansMono:size=FONTSIZE2\007
+URxvt.keysym.C-M-3: command:\033]710;xft:DejavuSansMono:size=FONTSIZE3\007
+URxvt.keysym.C-M-4: command:\033]710;xft:DejavuSansMono:size=FONTSIZE4\007
+URxvt.keysym.C-M-5: command:\033]710;xft:DejavuSansMono:size=FONTSIZE5\007
+URxvt.keysym.C-M-6: command:\033]710;xft:DejavuSansMono:size=FONTSIZE6\007
+URxvt.keysym.C-M-7: command:\033]710;xft:DejavuSansMono:size=FONTSIZE7\007
