@@ -26,11 +26,14 @@ set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 set undodir=~/.vim/undo
 
+set iskeyword-=_
+
 set tabstop=4
 set shiftwidth=4
-set expandtab
+" set expandtab
 
 " line numbers aktivieren
+set relativenumber
 set number
 
 if has("vms")
@@ -121,3 +124,25 @@ imap <leader>( ()<ESC>i
 imap <leader>{ {}<ESC>i
 imap <leader>< <><ESC>i
 imap <leader>[ []<ESC>i
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+" always display statusline
+set laststatus=2
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+" netrw tree style
+let g:netrw_liststyle=3
