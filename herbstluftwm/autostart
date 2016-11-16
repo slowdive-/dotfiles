@@ -42,6 +42,7 @@ hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-d spawn dmenu_run -fn 'Dejuva-sans:pixelsize=11'
 hc keybind $Mod-e spawn thunar
 hc keybind $Mod-m spawn bash .scripts/float-maximize.sh
+hc keybind $Mod-0 spawn bash .scripts/locker.sh
 
 # basic movement
 # focusing clients

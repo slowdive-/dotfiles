@@ -22,6 +22,9 @@ promptinit
 PROMPT="%{$fg[white]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$reset_color%}%# "
 RPROMPT="[%{$fg_no_bold[yellow]%}%1/%{$reset_color%}]"
 
+#vi mode
+set -o vi
+
 bindkey '[3~' delete-char
 bindkey '[1;5D' emacs-backward-word
 bindkey '[1;5C' emacs-forward-word
@@ -38,17 +41,25 @@ alias ll='ls -l --color=auto'
 alias la='ls -a --color=auto'
 alias syu='sudo pacman -Syu'
 alias ..='cd ..'
+alias music='zsh  ~/.scripts/music-player'
 alias lock='dm-tool lock'
-alias lk='dm-tool lock'
-alias intellij='cd ~/Downloads/idea-IU-143.2287.1/bin && ./idea.sh & disown'
-alias magic-draw='zsh ~/Dokumente/whz/pti900/magic-draw/bin/mduml & disown'
+alias lk='zsh ~/.scripts/locker.sh'
+alias hc='herbstclient'
+alias clock='while :; do printf "%s\r" "$(date +%r)"; sleep 1 ; done'
+alias feh-diashow='feh -ZXF'
+alias find-biggest-files='du -a . | sort -nr | head -n +10'
 
 
-function font_inc() {
-    if [ "$1" != "" ]
-    then
-        bash ~/.scripts/urxvt-font $1 && exit
-    else
-        bash ~/.scripts/urxvt-font 6 && exit
-    fi
-}
+#lazy git
+alias gs="git status"
+alias gp="git pull"
+alias gpo="git push origin"
+alias gd="git diff"
+alias gdh="git diff HEAD HEAD^"
+alias gt="git difftool"
+alias gth="git difftool HEAD HEAD^"
+alias git-clone-latest-only="echo 'todo'"
+alias git-tree="git log --graph --abbrev-commit --decorate --oneline --all"
+alias git-check-for-updates="git fetch origin && git log HEAD..origin/master --oneline"
+alias git-clone-latest-only="git clone --depth=1 --branch=master"
+alias git-show-changes='git log -p' #File
