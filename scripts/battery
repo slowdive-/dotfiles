@@ -1,2 +1,14 @@
 #!/bin/zsh
-echo "Battery: $(expr $(expr $(cat /sys/class/power_supply/BAT*/charge_now) \* 100) / $(cat /sys/class/power_supply/BAT*/charge_full))% $(cat /sys/class/power_supply/BAT*/status)"
+batteryPercent=$(expr $(expr $(cat /sys/class/power_supply/BAT*/charge_now) \* 100) / $(cat /sys/class/power_supply/BAT*/charge_full))
+echo "Battery: $batteryPercent% $(cat /sys/class/power_supply/BAT*/status)"
+
+if [ $batteryPercent -lt 10 ] && [ ! -e /tmp/batteryWarningSent ]
+then
+	notify-send "Akkustand niedrig!" "Akkustand beträgt nur noch $batteryPercent%" --icon=dialog-information
+	touch /tmp/batteryWarningSent
+fi
+
+if [ $batteryPercent -gt 10 ] && [ -e /tmp/batteryWarningSent ]
+then
+	rm /tmp/batteryWarningSent
+fi
