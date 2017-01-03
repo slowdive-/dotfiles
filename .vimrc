@@ -26,7 +26,7 @@ set backupdir=~/.vim/backup,.
 set directory=~/.vim/backup,.
 set undodir=~/.vim/undo
 
-set iskeyword-=_
+set iskeyword-=
 
 set tabstop=4
 set shiftwidth=4
@@ -146,3 +146,9 @@ set statusline+=\ %P    "percent through file
 
 " netrw tree style
 let g:netrw_liststyle=3
+
+" better colors
+" only works with CSApprox
+" https://github.com/zanglg/nova.vim/blob/master/colors/nova.vim
+set background=dark
+colorscheme nova
