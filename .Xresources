@@ -33,3 +33,13 @@ URxvt.keysym.C-M-4: command:\033]710;xft:DejavuSansMono:size=FONTSIZE4\007
 URxvt.keysym.C-M-5: command:\033]710;xft:DejavuSansMono:size=FONTSIZE5\007
 URxvt.keysym.C-M-6: command:\033]710;xft:DejavuSansMono:size=FONTSIZE6\007
 URxvt.keysym.C-M-7: command:\033]710;xft:DejavuSansMono:size=FONTSIZE7\007
+
+!nice fonts
+URxvt.letterSpace: -1
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
