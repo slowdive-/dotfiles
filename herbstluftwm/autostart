@@ -6,6 +6,12 @@ hc() {
     herbstclient "$@"
 }
 
+# kill matched processes
+killpids() {
+	killids=`ps -x | grep "$@" | grep -o "^[ ]*[0-9]*" `
+	kill $killids
+}
+
 hc emit_hook reload
 
 #xsetroot -solid '#5A8E3A'
@@ -14,8 +20,11 @@ hc emit_hook reload
 xrdb /home/imma/.Xresources
 #deutsches layout
 setxkbmap de
+
 #feh Hintergrund
-feh --bg-scale ~/bg.jpg
+killpids "sh.*bg-script\.sh"
+sh ~/.scripts/bg-script.sh &
+
 #compton im Hintergrund starten
 compton --config .config/compton.conf -b
 #Horizontales Scrollen aktivieren
@@ -164,7 +173,7 @@ hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
 #windows snap to edges in floating mode
-hc set snap_distance 20
+hc set snap_distance 10
 hc set snap_gap 0
 
 # rules
@@ -188,6 +197,8 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # or simply:
 # hc detect_monitors
 
+# kill old panel
+killpids "herbstluftwm/panel.sh"
 # find the panel
 panel=~/.config/herbstluftwm/panel.sh
 [ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
