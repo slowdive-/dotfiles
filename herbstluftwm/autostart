@@ -139,12 +139,16 @@ hc keybind XF86AudioMute spawn amixer -q set Master toggle
 hc keybind Print spawn scrot
 
 # theme
+arch_blue='#1e5997'
+dirty_green='#1a824e'
+current_theme_color=$dirty_green
+
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#1e5997'
+hc set frame_border_active_color "$current_theme_color"
 hc set frame_border_normal_color '#101010'
 hc set frame_bg_normal_color '#101010'
-hc set frame_bg_active_color '#1e5997'
+hc set frame_bg_active_color "$current_theme_color"
 hc set frame_border_width 1
 hc set always_show_frame 0
 hc set frame_bg_transparent 1
@@ -153,7 +157,7 @@ hc set frame_transparent_width 2
 #größere Lücken
 herbstclient set frame_gap 6
 
-hc attr theme.active.color '#1e5997'
+hc attr theme.active.color "$current_theme_color"
 hc attr theme.normal.color '#454545'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 1
@@ -173,8 +177,8 @@ hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
 #windows snap to edges in floating mode
-hc set snap_distance 10
-hc set snap_gap 0
+hc set snap_distance 7
+hc set snap_gap 7
 
 # rules
 hc unrule -F
