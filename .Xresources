@@ -10,8 +10,8 @@ urxvt*background: black
 !--------    -------
 !0 Black      8 Black
 !1 Red        9 Red
-!3 Yellow    11 Yellow
 !2 Green     10 Green
+!3 Yellow    11 Yellow
 !4 Blue      12 Blue
 !5 Magenta   13 Magenta
 !6 Cyan      14 Cyan
@@ -22,8 +22,8 @@ urxvt*background: black
 !*.color12: #408cda
 
 !green theme
-*.color1: #821a1a
-*.color9: #c22727
+*.color1: #ad2323
+*.color9: #d52e2e
 
 *.color2: #4e821a
 *.color10: #719b47
