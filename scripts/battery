@@ -1,6 +1,6 @@
 #!/bin/zsh
 batteryPercent=$(expr $(expr $(cat /sys/class/power_supply/BAT*/charge_now) \* 100) / $(cat /sys/class/power_supply/BAT*/charge_full))
-echo "Battery: $batteryPercent% $(cat /sys/class/power_supply/BAT*/status)"
+echo "Battery: ^fg(#bfbfbf)$batteryPercent% ^fg(#909090)$(cat /sys/class/power_supply/BAT*/status)"
 
 if [ $batteryPercent -lt 10 ] && [ ! -e /tmp/batteryWarningSent ]
 then

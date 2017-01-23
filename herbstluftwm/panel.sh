@@ -14,7 +14,8 @@ panel_width=${geometry[2]}
 panel_height=16
 #font="-*-fixed-medium-*-*-*-10-*-*-*-*-*-*-*"
 font="-*-dejavu sans-medium-*-*-*-10-*-*-*-*-*-*-*"
-bgcolor=$(hc get frame_border_normal_color)
+#bgcolor=$(hc get frame_border_normal_color)
+bgcolor='#000000'
 selbg=$(hc get window_border_active_color)
 selfg='#101010'
 
@@ -118,12 +119,13 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        battery="$(zsh ~/.scripts/battery)"
-        volume="$(zsh ~/.scripts/volume)"
-        right="$separator^fg() $volume $separator^fg() $battery $separator^bg() $date $separator"
+        space="          "
+        battery="^fg(#909090)$(zsh ~/.scripts/battery)"
+		volume="^fg(#909090)$(zsh ~/.scripts/volume)"
+        right="$space $separator^fg() $volume $separator^fg() $battery $separator^bg() $date $separator"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
-        width=$($textwidth "$font" "$right_text_only     ")
+        width=$($textwidth "$font" "$right_text_only               ")
         echo -n "^pa($(($panel_width - $width)))$right"
         echo
 
