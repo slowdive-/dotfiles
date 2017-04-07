@@ -28,6 +28,10 @@ set undodir=~/.vim/undo
 
 set iskeyword-=
 
+" close brackets in insert mode
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+
 set tabstop=4
 set shiftwidth=4
 " set expandtab
@@ -146,9 +150,21 @@ set statusline+=\ %P    "percent through file
 
 " netrw tree style
 let g:netrw_liststyle=3
-
-" better colors
-" only works with CSApprox
-" https://github.com/zanglg/nova.vim/blob/master/colors/nova.vim
+set termguicolors
 set background=dark
 colorscheme nova
+
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
+
+" autocomplete in C/CPP projects is too slow with all the includes ...
+set complete-=i
+
+" omnicomplete
+set omnifunc=syntaxcomplete#Complete
+
+" activate checking with :set spell
+set spelllang=de
