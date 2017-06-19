@@ -168,3 +168,12 @@ set omnifunc=syntaxcomplete#Complete
 
 " activate checking with :set spell
 set spelllang=de
+
+set wildmode=longest,list,full
+set wildmenu
+
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+
+command! Mk silent make |redraw!
+nnoremap <F5> <Esc> :Mk<CR>
