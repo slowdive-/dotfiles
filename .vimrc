@@ -176,4 +176,4 @@ ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 
 command! Mk silent make |redraw!
-nnoremap <F5> <Esc> :Mk<CR>
+nnoremap <F5> <Esc>:Mk<CR>
