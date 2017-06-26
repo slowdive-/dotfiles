@@ -1,7 +1,7 @@
 #!/bin/zsh
-if [ $(amixer get Master | grep -c off) != 1 ]
+if [ $(amixer get Master | grep -c off) != 2 ]
 then
-    echo "Volume: ^fg(#bfbfbf)$(expr $(amixer get Master | grep % | cut -d'[' -f 2 | cut -d']' -f 1))"
+    echo "Volume: ^fg(#bfbfbf)$(expr $(amixer get Master | grep -e "Left.*%" | cut -d'[' -f 2 | cut -d']' -f 1))"
 else
     echo "Volume: off "
 fi
